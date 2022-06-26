@@ -1,7 +1,5 @@
-"""notepad application"""
-
 import tkinter as tk
-import hashlib
+from tkinter import messagebox as tkmb
 from pathlib import Path
 
 # first line
@@ -52,7 +50,7 @@ private_inp = tk.Checkbutton(
     root,
     variable=private_var,
     text='Private'
-).grid(row=2, column=0, ipadx=5, ipady=5)
+).grid(sticky='w', ipadx=5, ipady=5)
 
 # message
 message_frame = tk.LabelFrame(root, text='Message')
@@ -118,6 +116,7 @@ def save():
         fh.write(message)
 
     status_var.set(f'Message was saved to {filename}')
+    tkmb.showinfo('Saved', f'Message was saved to {filename}')
 
 save_btn.configure(command=save)
 
