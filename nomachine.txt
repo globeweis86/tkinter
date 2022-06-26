@@ -1,0 +1,810 @@
+pi@raspberrypi:~ $ file /usr/local/bin/helm
+/usr/local/bin/helm: cannot open `/usr/local/bin/helm' (No such file or directory)
+pi@raspberrypi:~ $ cd /usr/local/bin/helm
+bash: cd: /usr/local/bin/helm: No such file or directory
+pi@raspberrypi:~ $ cd /usr/local/bin
+pi@raspberrypi:/usr/local/bin $ ls
+pi@raspberrypi:/usr/local/bin $ cd ~
+pi@raspberrypi:~ $ dpkg --print-architecture
+armhf
+pi@raspberrypi:~ $ cd Downloads
+pi@raspberrypi:~/Downloads $ ls
+helm-v2.15.1-linux-amd64.tar.gz  nomachine_7.10.1_1_arm64.deb
+pi@raspberrypi:~/Downloads $ sudo dpkg -r nomachine
+(Reading database ... 110382 files and directories currently installed.)
+Removing nomachine:arm64 (7.10.1-1) ...
+NX> 702 Starting uninstall at: Sat Jun 25 15:47:43 2022.
+/etc/NX/nxserver: line 156: /usr/NX/bin/nxserver.bin: cannot execute binary file: Exec format error
+/etc/NX/nxserver: line 156: /usr/NX/bin/nxserver.bin: Success
+NX> 702 ERROR: Cannot shutdown nxserver.
+NX> 702 Uninstalling: nxserver version: 7.10.1.
+NX> 702 Uninstall log is: /usr/NX/var/log/nxuninstall.log.
+/etc/NX/nxserver: line 156: /usr/NX/bin/nxserver.bin: cannot execute binary file: Exec format error
+/etc/NX/nxserver: line 156: /usr/NX/bin/nxserver.bin: Success
+NX> 702 ERROR: Cannot shutdown nxserver.
+NX> 702 Saving configuration file to: /usr/NX/etc/server.cfg.backup.
+NX> 702 Saving usb DB to: /usr/NX/etc/usb.db.backup.
+NX> 702 Server uninstall completed with warnings.
+NX> 702 Please review the uninstall log for details.
+NX> 702 Uninstalling: nxnode version: 7.10.1.
+NX> 702 Uninstall log is: /usr/NX/var/log/nxuninstall.log.
+NX> 702 Saving configuration file to: /usr/NX/etc/node.cfg.backup.
+NX> 702 Deleting user: nx from the system.
+NX> 702 Uninstalling: nxplayer version: 7.10.1.
+NX> 702 Uninstall log is: /usr/NX/var/log/nxuninstall.log.
+NX> 702 Uninstalling USB module.
+NX> 702 Uninstalling: nxclient version: 7.10.1.
+NX> 702 Uninstall log is: /usr/NX/var/log/nxuninstall.log.
+NX> 702 Uninstall completed with errors at: Sat Jun 25 15:48:44 2022.
+pi@raspberrypi:~/Downloads $ sudo dpkg -r nomachine
+dpkg: warning: ignoring request to remove nomachine:arm64, only the config
+ files of which are on the system; use --purge to remove them too
+pi@raspberrypi:~/Downloads $ sudo dpkg --purge nomachine
+(Reading database ... 110369 files and directories currently installed.)
+Purging configuration files for nomachine:arm64 (7.10.1-1) ...
+pi@raspberrypi:~/Downloads $ ls
+helm-v2.15.1-linux-amd64.tar.gz  nomachine_7.10.1_1_arm64.deb
+pi@raspberrypi:~/Downloads $ sudo dpkg -r nomachine
+dpkg: warning: ignoring request to remove nomachine which isn't installed
+pi@raspberrypi:~/Downloads $ sudo dpkg -i nomachine_7.0.211_1_armhf.deb
+dpkg: error: cannot access archive 'nomachine_7.0.211_1_armhf.deb': No such file or directory
+****************************************************************
+pi@raspberrypi:~ $ sudo dpkg -i nomachine_7.10.1_1_arm64.deb
+dpkg: error: cannot access archive 'nomachine_7.10.1_1_arm64.deb': No such file or directory
+pi@raspberrypi:~ $ cd Downloads
+pi@raspberrypi:~/Downloads $ sudo dpkg -i nomachine_7.10.1_1_arm64.deb
+dpkg: error processing archive nomachine_7.10.1_1_arm64.deb (--install):
+ package architecture (arm64) does not match system (armhf)
+Errors were encountered while processing:
+ nomachine_7.10.1_1_arm64.deb
+pi@raspberrypi:~/Downloads $ cd~
+bash: cd~: command not found
+pi@raspberrypi:~/Downloads $ cd ~
+pi@raspberrypi:~ $ dpkg --add-architecture arm64
+dpkg: error: unable to create new file '/var/lib/dpkg/arch-new': Permission denied
+pi@raspberrypi:~ $ sudo dpkg --add-architecture arm64
+pi@raspberrypi:~ $ cd Downloads
+pi@raspberrypi:~/Downloads $ sudo dpkg -i nomachine_7.10.1_1_arm64.deb
+Selecting previously unselected package nomachine:arm64.
+(Reading database ... 110369 files and directories currently installed.)
+Preparing to unpack nomachine_7.10.1_1_arm64.deb ...
+Unpacking nomachine:arm64 (7.10.1-1) ...
+Setting up nomachine:arm64 (7.10.1-1) ...
+NX> 700 Starting install at: Sat Jun 25 15:19:55 2022.
+NX> 700 Installing: nxclient version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Compiling the USB module.
+NX> 700 Installing: nxplayer version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 To connect the remote printer to the local desktop,
+NX> 700 the user account must be a member of the CUPS System Group: lpadmin.
+NX> 700 Installing: nxnode version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Creating configuration in: /usr/NX/etc/node.cfg.
+NX> 700 ERROR: Cannot validate license file.
+NX> 700 ERROR: Error in CUDA initialization..
+NX> 700 Node install completed with warnings.
+NX> 700 Please review the install log for details.
+NX> 700 Installing: nxserver version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Creating configuration in: /usr/NX/etc/server.cfg.
+NX> 700 ERROR: Cannot validate license file.
+NX> 700 Cannot validate node license file.
+NX> 700 Cannot add installation data to database.
+NX> 700 Failed to run '/usr/NX/bin/nxkeygen'.
+/usr/bin/sed: can't read /var/NX/nx/.ssh/authorized_keys: No such file or directory
+/usr/bin/sed: can't read /var/NX/nx/.ssh/authorized_keys: No such file or directory
+/usr/bin/sed: can't read /var/NX/nx/.ssh/authorized_keys2: No such file or directory
+/usr/bin/sed: can't read /var/NX/nx/.ssh/authorized_keys2: No such file or directory
+NX> 700 Server install completed with warnings.
+NX> 700 Please review the install log for details.
+NX> 700 Install completed with errors at: Sat Jun 25 15:20:33 2022.
+NX> 700 NoMachine was configured to run the following services:
+NX> 700 NX service on port: 4000
+pi@raspberrypi:~/Downloads $ cd ~
+pi@raspberrypi:~ $ cd /usr/NX/var/log/nxinstall.log
+bash: cd: /usr/NX/var/log/nxinstall.log: Not a directory
+pi@raspberrypi:~ $ pwd
+/home/pi
+pi@raspberrypi:~ $ cd /usr
+pi@raspberrypi:/usr $ ls
+bin  games  include  lib  libexec  local  NX  sbin  share  src
+pi@raspberrypi:/usr $ cd NX
+pi@raspberrypi:/usr/NX $ ls
+bin  etc  lib  scripts  share  var
+pi@raspberrypi:/usr/NX $ cd var
+pi@raspberrypi:/usr/NX/var $ cd log
+pi@raspberrypi:/usr/NX/var/log $ ls
+archives  logrotate  nxd.log  nxerror.log  nxinstall.log  nxserver.log
+pi@raspberrypi:/usr/NX/var/log $ cat nxinstall.log
+NX> 700 Running: /bin/chmod 775 '/usr/NX/var/log'.
+NX> 700 Result: OK.
+
+
+NX> 700 Starting install at: Sat Jun 25 15:19:55 2022.
+NX> 700 Installing: nxclient version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Installing NoMachine from: nomachine_7.10.1_1_arm64.deb package.
+NX> 700 System information: debian 10 Linux raspberrypi 5.10.63-v7+ #1459 SMP Wed Oct 6 16:41:10 BST 2021 armv7l GNU/Linux.
+NX> 700 Running: /bin/chown root:root '/etc/NX/server/localhost/client.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxfunct.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxfunct.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxusb.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxusb.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxusb.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 555 '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/bin/nxfsm'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 555 '/usr/NX/bin/nxfsm'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/bin/nxfsm'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxtun.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 555 '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/bin/nxexec'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/install -g root -m 500 -o root '/usr/NX/bin/nxprint' '/usr/lib/cups/backend/nxprint'.
+NX> 700 Result: OK.
+NX> 700 Installing XDG Mime.
+NX> 700 Running: /usr/bin/xdg-desktop-menu install --mode system '/usr/NX/share/applnk/client/xdg/NoMachine-nxs.desktop' '/usr/NX/share/applnk/client/xdg/NoMachine-nxw.desktop' '/usr/NX/share/applnk/client/xdg/NoMachine-nxv.desktop' '/usr/NX/share/applnk/client/xdg/NoMachine-nxr.desktop'.
+NX> 700 Result: OK.
+NX> 700 Compiling the USB module.
+NX> 700 Cannot compile USB module.
+NX> 700 Running: /bin/cp -f '/usr/NX/share/mimetypes.sample' '/usr/NX/share/mimetypes'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/mkdir -p '/media/nomachine'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 777 '/media/nomachine'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/etc/version'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 444 '/usr/NX/etc/version'.
+NX> 700 Result: OK.
+NX> 700 ERROR: /bin/bash: /usr/NX/bin/nxkeygen: cannot execute binary file: Exec format error.
+NX> 700 Running: /bin/install -g root -m 644 -o root '/usr/NX/scripts/etc/pam.d/nx' '/etc/pam.d/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/etc/update.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 644 '/usr/NX/etc/update.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -f '/usr/NX/lib/libstdc++.so.6'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 775 '/usr/NX/var/log'.
+NX> 700 Result: OK.
+
+
+NX> 700 Installing: nxplayer version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Running: /bin/chown root:root '/etc/NX/server/localhost/player.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/bin/nxplayer'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/share/applnk/player'.
+NX> 700 Result: OK.
+NX> 700 Cannot change ownership of: /usr/NX/share/applnk/player/non-xgd to: root:root. Path doesn't exist.
+NX> 700 Running: /bin/chown -R root:root '/usr/NX/share/applnk/player/xdg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R root:root '/usr/NX/share/locale/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/share/keyboards'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R root:root '/usr/NX/share/images'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R root:root '/usr/NX/scripts/etc/localhost/player.cfg'.
+NX> 700 Result: OK.
+NX> 700 To connect the remote printer to the local desktop,
+NX> 700 the user account must be a member of the CUPS System Group: lpadmin.
+NX> 700 Running: /bin/chmod 775 '/usr/NX/var/log'.
+NX> 700 Result: OK.
+
+
+NX> 700 Installing: nxnode version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Running: /bin/install -g root -m 644 -o root '/usr/NX/scripts/etc/pam.d/nxlimits' '/etc/pam.d/'.
+NX> 700 Result: OK.
+NX> 700 Running: /usr/sbin/groupadd nx.
+NX> 700 Result: OK.
+NX> 700 Running: /usr/sbin/adduser  --home '/var/NX/nx' --system --disabled-password --ingroup nx --shell /bin/false nx.
+NX> 700 Result: Adding system user `nx' (UID 115) ...
+Adding new user `nx' (UID 115) with group `nx' ...
+Creating home directory `/var/NX/nx' ....
+NX> 700 Result: OK.
+NX> 700 Running: /usr/sbin/usermod -p '*' nx .
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R nx:root '/var/NX/nx'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0700 '/var/NX/nx'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -Rf '/usr/NX/home/nx' '/var/NX'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R nx '/var/NX/nx'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -fr '/usr/NX/home'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/update.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 644 '/usr/NX/etc/update.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/etc/NX/server/localhost/node.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/var/db/node/hostinfo'.
+NX> 700 Result: OK.
+NX> 700 Creating configuration in: /usr/NX/etc/node.cfg.
+NX> 700 Running: /bin/install -g root -m 644 -o nx '/usr/NX/etc/node-debian.cfg.sample' '/usr/NX/etc/node.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: '/etc/NX/nxnode' --validate.
+NX> 700 ERROR: Cannot validate license file.
+NX> 700 Running: /bin/mv '/usr/NX/etc/node.lic.sample' '/usr/NX/etc/node.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/node.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0400 '/usr/NX/etc/node.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/var/log/nxd.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/log/nxd.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0644 '/usr/NX/var/log/nxd.log'.
+NX> 700 Result: OK.
+NX> 700 Updating CUPS entries in: /usr/NX/etc/node.cfg.
+NX> 700 Inspecting local CUPS environment.
+NX> 700 Updated key: EnableCUPSSupport="1".
+NX> 700 Updated key: CUPSBackendPath="/usr/lib/cups/backend".
+NX> 700 Updated key: CUPSBinPath="/usr/bin".
+NX> 700 Updated key: CUPSSbinPath="/usr/sbin".
+NX> 700 Checking for: PulseAudio.
+NX> 700 Pulseaudio file found in: /usr/bin/pulseaudio.
+NX> 700 Running: /bin/mkdir -p '/usr/NX/share/audio'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -f '/etc/pulse/client.conf' '/usr/NX/share/audio/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -f '/etc/pulse/daemon.conf' '/usr/NX/share/audio/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -f '/etc/pulse/default.pa' '/usr/NX/share/audio/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 666 '/usr/NX/share/audio/default.pa'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/mv '/usr/NX/share/audio/default.pa.tmp' '/usr/NX/share/audio/default.pa'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 644 '/usr/NX/share/audio/daemon.conf'.
+NX> 700 Result: OK.
+NX> 700 Changed values for: use-pid-file, high-priority and exit-idle-time in file: /usr/NX/share/audio/daemon.conf.
+NX> 700 Updating PulseAudio infrastructure.
+NX> 700 Updating PulseAudio entries in: /usr/NX/etc/node.cfg.
+NX> 700 Updated key: CommandStartPulseAudio="/usr/bin/pulseaudio --high-priority=no".
+NX> 700 Updated key: AudioInterface="pulseaudio".
+NX> 700 Configuring: ALSA.
+NX> 700 Running: /bin/cp -f '/usr/share/alsa/alsa.conf' '/usr/NX/share/audio/alsa.conf'.
+NX> 700 Result: OK.
+NX> 700 Cannot install: /usr/lib/cups/backend/nx. Path doesn't exist.
+NX> 700 Updated key: DefaultXSession="/etc/X11/Xsession default".
+NX> 700 Updated key: DefaultDesktopCommand="/usr/bin/lxsession -e LXDE".
+NX> 700 Updated key: AvailableSessionTypes="unix-remote,unix-console,unix-default,unix-application,physical-desktop,shadow,unix-xsession-default,unix-xdm".
+NX> 700 Updated key: EnableSMBFSSupport="1".
+NX> 700 Running: /bin/mkdir -p '/usr/NX/var/log/archives'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0744 '/usr/NX/var/log/archives'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/mkdir -p '/usr/NX/var/log/logrotate'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/log/logrotate'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0744 '/usr/NX/var/log/logrotate'.
+NX> 700 Result: OK.
+NX> 700 Updated key: CommandFuser=/usr/bin/fuser.
+NX> 700 Updated key: CommandLsof=/usr/bin/lsof.
+NX> 700 Updated key: CommandXdpyInfo=/usr/bin/xdpyinfo.
+NX> 700 Updated key: CommandXmodmap=/usr/bin/xmodmap.
+NX> 700 Updated key: CommandXkbComp=/usr/bin/xkbcomp.
+NX> 700 Key: EnableWhiteboard already exists in config file. Not inserted.
+NX> 700 Key: DisplayMonitorIcon already exists in config file. Not inserted.
+NX> 700 Key: DisplayMonitorNotifications already exists in config file. Not inserted.
+NX> 700 Key: PhysicalDisplays already exists in config file. Not inserted.
+NX> 700 Removed key: DisplayDefault.
+NX> 700 Key: AgentX11VectorGraphics already exists in config file. Not inserted.
+NX> 700 Key: EnableSoundAlert already exists in config file. Not inserted.
+NX> 700 Key: EnableServerStatus already exists in config file. Not inserted.
+NX> 700 Key: EnableServerPreferences already exists in config file. Not inserted.
+NX> 700 Key: AgentLegacyKeyboard already exists in config file. Not inserted.
+NX> 700 Key: DesktopCommandLibraryPath already exists in config file. Not inserted.
+NX> 700 Key: DefaultConsole already exists in config file. Not inserted.
+NX> 700 Key: EnableDisplayServerVideoCodec already exists in config file. Not inserted.
+NX> 700 Key: EnableSyslogSupport already exists in config file. Not inserted.
+NX> 700 Key: KerberosCredentialsRenewal already exists in config file. Not inserted.
+NX> 700 Key: EnableHardwareEncoding already exists in config file. Not inserted.
+NX> 700 Key: ProxyPacketPriority already exists in config file. Not inserted.
+NX> 700 Key: EnableDbusLaunch already exists in config file. Not inserted.
+NX> 700 Key: VirtualDesktopVariables already exists in config file. Not inserted.
+NX> 700 Key: EnableAcceptingConnection already exists in config file. Not inserted.
+NX> 700 Key: EnablePublicPrinter already exists in config file. Not inserted.
+NX> 700 Key: UserScriptAfterRemoteResize already exists in config file. Not inserted.
+NX> 700 Key: EncoderMode already exists in config file. Not inserted.
+NX> 700 Key: EnableEGLCapture already exists in config file. Not inserted.
+NX> 700 Key: NXRecordingDirectory already exists in config file. Not inserted.
+NX> 700 Key: WaylandModes already exists in config file. Not inserted.
+NX> 700 Key: EnablePublicDiskSharing already exists in config file. Not inserted.
+NX> 700 Key: EnableEGLCapture already exists in config file. Not inserted.
+NX> 700 Key: CommonLogDirectory already exists in config file. Not inserted.
+NX> 700 Inserted key: LogoutOnDisconnect.
+NX> 700 Inserted key: LogoutOnDisconnectTimeout.
+NX> 700 Key: ServerClipboardLimit already exists in config file. Not inserted.
+NX> 700 Key: ClientClipboardLimit already exists in config file. Not inserted.
+NX> 700 Updated key: DefaultConsole="lxterminal".
+NX> 700 Removed key: FileTransferWarning.
+NX> 700 Removed key: FileTransferWarningSize.
+NX> 700 Removed key: FileTransferAuthorization.
+NX> 700 Removed key: FixedResolution.
+NX> 700 Removed key: MinimumResolution.
+NX> 700 Removed key: MaximumResolution.
+NX> 700 Removed key: CommandStartCDE.
+NX> 700 Removed key: AlwaysDisplayMonitorWindow.
+NX> 700 Removed key: .
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxlicense.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxlicense.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxlicense.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxupdate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxupdate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxupdate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxenvironmentget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxenvironmentget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxenvironmentget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxportandcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxportandcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxportandcookieget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxkill.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxkill.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxkill.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxkeyadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxkeyadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxkeyadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxtmpperm.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxtmpperm.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxtmpperm.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxdisableAvc.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxdisableAvc.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxdisableAvc.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxuseradd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxuseradd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxuseradd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxuserdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxuserdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxuserdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxcopy.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxcopy.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxcopy.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxtruncate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxtruncate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxtruncate.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxamixer.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxamixer.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxamixer.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxloginctl.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxloginctl.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxloginctl.sh'.
+NX> 700 Result: OK.
+NX> 700 CUPS SystemGroup: lpadmin. Base on file: /etc/cups/cups-files.conf.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 700 '/usr/NX/scripts/log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/env/forcelogout.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 755 '/usr/NX/scripts/env/forcelogout.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/env/forcelogout.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/keys/host'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:nx '/usr/NX/etc/node.cfg'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/mkdir -p '/usr/NX/var/tmp'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/tmp'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 1755 '/usr/NX/var/tmp'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0777 '/usr/NX/var/log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/tmp/.ICE-unix'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 1777 '/tmp/.ICE-unix'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/tmp/.X11-unix'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 1777 '/tmp/.X11-unix'.
+NX> 700 Result: OK.
+NX> 700 Updated key: CommandFuser=/usr/bin/fuser.
+NX> 700 Updated key: CommandLsof=/usr/bin/lsof.
+NX> 700 Updated key: CommandXdpyInfo=/usr/bin/xdpyinfo.
+NX> 700 Updated key: CommandXmodmap=/usr/bin/xmodmap.
+NX> 700 Updated key: CommandXkbComp=/usr/bin/xkbcomp.
+NX> 700 Running: /bin/touch '/usr/NX/var/db//update'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:nx '/usr/NX/var/db//update'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0644 '/usr/NX/var/db//update'.
+NX> 700 Result: OK.
+NX> 700 Running: /usr/NX/bin/nxcuinit.
+NX> 700 ERROR: Error in CUDA initialization..
+NX> 700 Node install completed with warnings.
+NX> 700 Please review the install log for details.
+NX> 700 Running: /bin/chmod 775 '/usr/NX/var/log'.
+NX> 700 Result: OK.
+
+
+NX> 700 Installing: nxserver version: 7.10.1.
+NX> 700 Using installation profile: Debian.
+NX> 700 Install log is: /usr/NX/var/log/nxinstall.log.
+NX> 700 Running: /bin/chown nx:root '/etc/NX/nxserver'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 555 '/etc/NX/nxserver'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/etc/NX/nxserver'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/etc/NX/server/localhost/server.cfg'.
+NX> 700 Result: OK.
+NX> 700 Creating configuration in: /usr/NX/etc/server.cfg.
+NX> 700 Running: /bin/install -g root -m 644 -o nx '/usr/NX/etc/server-debian.cfg.sample' '/usr/NX/etc/server.cfg'.
+NX> 700 Result: OK.
+NX> 700 Command: /usr/sbin/usermod -s '/etc/NX/nxserver' nx.
+NX> 700 Result: OK.
+NX> 700 File not found: /usr/NX/etc/keys/node.localhost.id_dsa.
+NX> 700 Adding DSA key for user nx.
+NX> 700 Adding DSA key for user nx.
+NX> 700 ERROR: /bin/bash: /usr/NX/bin/nxkeygen: cannot execute binary file: Exec format error.
+NX> 700 File not found: /usr/NX/etc/keys/node.localhost.id_rsa.
+NX> 700 Adding RSA key for user nx.
+NX> 700 Adding RSA key for user nx.
+NX> 700 ERROR: /bin/bash: /usr/NX/bin/nxkeygen: cannot execute binary file: Exec format error.
+NX> 700 Running: /bin/touch '/usr/NX/etc/stop-server'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/stop-server'.
+NX> 700 Result: OK.
+NX> 700 Copying: /usr/NX/etc/usb.db from: /usr/NX/etc/usb.db.sample.
+NX> 700 Running: /bin/cp -f '/usr/NX/etc/usb.db.sample' '/usr/NX/etc/usb.db'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/etc/usb.db.lock'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/usb.db.lock'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/keys'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:nx '/usr/NX/etc/server.cfg'.
+NX> 700 Result: OK.
+NX> 700 Cannot change ownership of: /usr/NX/etc/keys/node.localhost.id_dsa to: nx:root. Path doesn't exist.
+NX> 700 Cannot change ownership of: /usr/NX/etc/keys/node.localhost.id_rsa to: nx:root. Path doesn't exist.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/db'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R nx:root '/usr/NX/var/db/node'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0755 '/usr/NX/var/db/node'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/mkdir -p '/usr/NX/var/db/server'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown -R nx:root '/usr/NX/var/db/server'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 1755 '/usr/NX/var/db/server'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/run'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 1755 '/usr/NX/var/run'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/usb.db'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0600 '/usr/NX/etc/usb.db'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/usb.db.lock'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/var/db/broadcast'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx '/usr/NX/var/db/broadcast'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/uuid'.
+NX> 700 Result: OK.
+NX> 700 Running: '/etc/NX/nxserver' --validate.
+NX> 700 ERROR: Cannot validate license file.
+NX> 700 Running: /bin/mv '/usr/NX/etc/server.lic.sample' '/usr/NX/etc/server.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/etc/server.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0400 '/usr/NX/etc/server.lic'.
+NX> 700 Result: OK.
+NX> 700 Running: '/etc/NX/nxserver' --validatenode.
+NX> 700 Cannot validate node license file.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxwtmpadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxwtmpadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxwtmpadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxwtmpdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxwtmpdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxwtmpdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0644 '/usr/NX/share/fail2ban/nxd.conf'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0644 '/usr/NX/share/fail2ban/nxauth.conf'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxpasswd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxpasswd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxpasswd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxhost.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxhost.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxhost.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxfwadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxfwadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxfwadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxfwdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxfwdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxfwdel.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxfwget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxfwget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxfwget.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxgroupadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxgroupadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxgroupadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxquotaadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxquotaadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxquotaadd.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxlsof.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxlsof.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxlsof.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxgfxcheck.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxgfxcheck.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxgfxcheck.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxchmod.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxchmod.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxchmod.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxrenice.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxrenice.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxrenice.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/nxpasswdask.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 755 '/usr/NX/scripts/nxpasswdask.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxchown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxchown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxchown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxcat.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxcat.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxcat.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxfailover.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxfailover.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxfailover.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxstandby.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxstandby.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxstandby.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/restricted/nxshutdown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 744 '/usr/NX/scripts/restricted/nxshutdown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod u+s '/usr/NX/scripts/restricted/nxshutdown.sh'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:nx '/etc/NX/nxserver'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 6555 '/etc/NX/nxserver'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/var/log/nxserver.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/log/nxserver.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0600 '/usr/NX/var/log/nxserver.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/touch '/usr/NX/var/log/nxerror.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown nx:root '/usr/NX/var/log/nxerror.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0600 '/usr/NX/var/log/nxerror.log'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -f '/usr/NX/scripts/systemd/nxserver.service' '/lib/systemd/system/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/systemctl enable nxserver.service.
+NX> 700 Result: Created symlink /etc/systemd/system/multi-user.target.wants/nxserver.service → /lib/systemd/system/nxserver.service..
+NX> 700 Result: OK.
+NX> 700 Updated key: AvailableSessionTypes="unix-remote,unix-console,unix-default,unix-application,physical-desktop,shadow,unix-xsession-default,unix-xdm".
+NX> 700 Running: '/etc/NX/nxserver' --addtoredis.
+NX> 700 Cannot add installation data to database.
+NX> 700 Running: NX_SYSTEM=/usr/NX                     LD_LIBRARY_PATH='/usr/NX/lib:/usr/NX/lib:'                         '/usr/NX/bin/nxkeygen' -k '/usr/NX/etc/keys/host/nx_host_rsa_key' -c '/usr/NX/etc/keys/host/nx_host_rsa_key.crt'.
+NX> 700 Failed to run '/usr/NX/bin/nxkeygen'.
+NX> 700 Cannot change ownership of: /usr/NX/etc/keys/host/nx_host_rsa_key to: nx:root. Path doesn't exist.
+NX> 700 Cannot set permissions attributes for: /usr/NX/etc/keys/host/nx_host_rsa_key to: 0600. Path doesn't exist.
+NX> 700 Cannot change ownership of: /usr/NX/etc/keys/host/nx_host_rsa_key.crt to: nx:root. Path doesn't exist.
+NX> 700 Cannot set permissions attributes for: /usr/NX/etc/keys/host/nx_host_rsa_key.crt to: 0644. Path doesn't exist.
+NX> 700 Running: /bin/ln -s '/usr/NX/scripts/vgl/libvglfaker.so' '/usr/NX/scripts/vgl/libGL.so'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/vgl/vglrun'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0755 '/usr/NX/scripts/vgl/vglrun'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/vgl/vglserver_config'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0755 '/usr/NX/scripts/vgl/vglserver_config'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chown root:root '/usr/NX/scripts/vgl/vglgenkey'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0755 '/usr/NX/scripts/vgl/vglgenkey'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/cp -f '/usr/NX/share/policy/org.freedesktop.pkexec.nomachine.policy' '/usr/share/polkit-1/actions/'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/chmod 0644 '/usr/share/polkit-1/actions/org.freedesktop.pkexec.nomachine.policy'.
+NX> 700 Result: OK.
+NX> 700 Installing with XDG.
+NX> 700 Creating XDG Menu.
+NX> 700 Running: /usr/bin/xdg-desktop-menu install --mode system '/usr/NX/share/applnk/server/xdg/NoMachine-dir.directory' '/usr/NX/share/applnk/server/xdg/NoMachine-base.desktop' '/usr/NX/share/applnk/server/xdg/NoMachine-base-unity.desktop' '/usr/NX/share/applnk/server/xdg/NoMachine-status.desktop' '/usr/NX/share/applnk/server/xdg/NoMachine-status-unity.desktop'.
+NX> 700 Result: OK.
+NX> 700 Running: /usr/bin/xdg-desktop-menu install --mode system '/usr/NX/share/applnk/server/xdg/NoMachine-base-xfce.desktop' '/usr/NX/share/applnk/server/xdg/NoMachine-status-xfce.desktop'.
+NX> 700 Result: OK.
+NX> 700 XDG Menu file: /etc/xdg/menus/applications-merged/NoMachine-dir.menu.
+NX> 700 Running: /bin/mv '/etc/xdg/menus/applications-merged/NoMachine-dir.menu.bkp' '/etc/xdg/menus/applications-merged/NoMachine-dir.menu'.
+NX> 700 Result: OK.
+NX> 700 Updated XDG menu file '/etc/xdg/menus/applications-merged/NoMachine-dir.menu'.
+NX> 700 XDG installed properly.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_dsa.pub. Path doesn't exist.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_dsa. Path doesn't exist.
+NX> 700 Running: /bin/rm -f '/usr/NX/etc/keys/node.localhost.id_dsa.prv'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -f '/var/NX/nx/.ssh/authorized_keys'.
+NX> 700 Result: OK.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_rsa.pub. Path doesn't exist.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_rsa. Path doesn't exist.
+NX> 700 Running: /bin/rm -f '/usr/NX/etc/keys/node.localhost.id_rsa.prv'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -f '/var/NX/nx/.ssh/authorized_keys'.
+NX> 700 Result: OK.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_dsa.pub. Path doesn't exist.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_dsa. Path doesn't exist.
+NX> 700 Running: /bin/rm -f '/usr/NX/etc/keys/node.localhost.id_dsa.prv'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -f '/var/NX/nx/.ssh/authorized_keys2'.
+NX> 700 Result: OK.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_rsa.pub. Path doesn't exist.
+NX> 700 Cannot install: /usr/NX/etc/keys/node.localhost.id_rsa. Path doesn't exist.
+NX> 700 Running: /bin/rm -f '/usr/NX/etc/keys/node.localhost.id_rsa.prv'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/rm -f '/var/NX/nx/.ssh/authorized_keys2'.
+NX> 700 Result: OK.
+NX> 700 Running: /bin/systemctl restart nxserver.service.
+NX> 700 Result: OK.
+NX> 700 Server install completed with warnings.
+NX> 700 Please review the install log for details.
+NX> 700 Install completed with errors at: Sat Jun 25 15:20:33 2022.
+NX> 700 NoMachine was configured to run the following services:
+NX> 700 NX service on port: 4000
+pi@raspberrypi:/usr/NX/var/log $ cd ~
+pi@raspberrypi:~ $ sudo dpkg --print-foreign-architectures
+arm64
+pi@raspberrypi:~ $
